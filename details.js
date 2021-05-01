@@ -162,7 +162,7 @@ const start = async () => {
     if (prevData.length != 0)
         start = prevData[prevData.length - 1].id
 
-    for (let i = start; i >= Math.max(start - 2, 0); i --) {
+    for (let i = start; i >= Math.max(start - 500, 0); i --) {
         console.log(data[i].profileURL + ' - ' + i)
         const curData = await getData(page, i + 1, data[i].profileURL, data[i].name)
         prevData = JSON.parse(await fs.readFileSync('data1.json'))
